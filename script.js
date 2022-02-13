@@ -67,7 +67,6 @@ btn.addEventListener('click', () => {
     })
 
     const parent = listEl.parentNode;
-    const vari = [];
 
     //functionality responsible for moving upwards selected task
     upButton.addEventListener('click', () => {
