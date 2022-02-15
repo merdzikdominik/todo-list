@@ -1,7 +1,6 @@
 const btn = document.querySelector('.taskBtn');
 const input = document.querySelector('.inputTask');
 
-//was var
 let counter = 1;
 let currentTaskNumber = 1;
 
@@ -13,7 +12,6 @@ input.addEventListener('keyup', event => {
 
 //create a task and insert it to the list
 function init() {
-    const providedTask = document.querySelector('.inputTask');
     const taskList = document.querySelector('.task-list');
     const listEl = document.createElement('li');
     const div1 = document.createElement('div');
@@ -42,7 +40,7 @@ function init() {
     iDown.classList.add('fa-circle-arrow-down');
 
     if(currentTaskNumber <= counter) {
-        span.textContent = currentTaskNumber + '. ' + providedTask.value;
+        span.textContent = currentTaskNumber + '. ' + input.value;
         currentTaskNumber = counter;
     }
 
@@ -91,7 +89,7 @@ function init() {
         insertAfter( oldChild, next );
     })
 
-    providedTask.value = '';
+    input.value = '';
 }
 
 //opposite of insertBefore function
