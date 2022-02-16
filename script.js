@@ -40,7 +40,7 @@ function init() {
     iDown.classList.add('fa-circle-arrow-down');
 
     if(currentTaskNumber <= counter) {
-        span.textContent = currentTaskNumber + '. ' + input.value;
+        span.textContent = input.value.charAt(0).toUpperCase() + input.value.slice(1);
         currentTaskNumber = counter;
     }
 
