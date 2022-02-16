@@ -19,18 +19,12 @@ header {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* background-attachment: fixed; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .top-container {
-    /* display: grid; */
-    /* display: grid;
-    align-items: center;
-    justify-content: center; */
-    /* background-color: red; */
     height: 100%;
     width: 600px;
 }
@@ -38,24 +32,13 @@ header {
 .top-container h1 {
     padding: 70px 50px 0 50px;
     margin-bottom: 30px;
-    /* padding-bottom: 10px; */
-    /* background-color: red; */
     color: #fff;
-    /* background-color: #eec0c6; */
-    /* background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%); */
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     font-size: 50px;
     letter-spacing: 10px;
-    /* font-weight: initial; */
     font-family: 'Poppins', sans-serif;
 }
 
 .inputTask {
-    /* width: 100%;
-    height: 50px;
-    border-radius: 1em;
-    border: none; */
     background-color: transparent;
     outline: none;
     height: 35px;
@@ -65,11 +48,6 @@ header {
 }
 
 .taskBtn {
-    /* width: 40px;
-    height: 50px;
-    border-radius: 1rem;
-    border: none; */
-    /* position: absolute; */
     background-color: #C00;
     border-radius: 50%;
     border: 0;
@@ -106,58 +84,66 @@ section {
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 0;
 }
 
 .task-container {
     width: 600px;
     height: 100%;
-    background-color: #fff;
     margin: 0;
-    padding: 0;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    background-color: #fff;
     -webkit-box-shadow: 0px -1px 33px -18px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px -1px 33px -18px rgba(66, 68, 90, 1);
     box-shadow: 0px -1px 33px -18px rgba(66, 68, 90, 1);
-    
 }
 
 .task-list {
     list-style-type: none;
     margin: 0;
-    padding: 0 3rem;
+    padding: 0;
 }
 
 .list-element {
     width: 100%;
-    margin-bottom: 10px;
+    padding: 0 1rem;
+    margin: 1rem 0;
 }
 
 .div-task {
     height: 6rem;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, #fff 50%, lightblue 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+
+.div-task:hover {
+    background-position: left;
 }
 
 .task {
     font-size: 1.2rem;
     margin-right: auto;
     font-family: 'Poppins', sans-serif;
+    position: relative;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
 }
 
 .btn-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: .5rem; */
+    padding: 0 2rem;
     gap: 1rem;
 }
 
 .delete-btn, .up-btn, .down-btn{
-    /* background-color: red; */
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     margin: auto;
     border: none;
     outline: 0;
