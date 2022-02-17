@@ -1,9 +1,6 @@
 const btn = document.querySelector('.taskBtn');
 const input = document.querySelector('.inputTask');
 
-let counter = 1;
-let currentTaskNumber = 1;
-
 btn.addEventListener('click', init);
 input.addEventListener('keyup', event => {
     let enter = event.key;
@@ -14,7 +11,7 @@ input.addEventListener('keyup', event => {
 function init() {
     const taskList = document.querySelector('.task-list');
     const listEl = document.createElement('li');
-    const div1 = document.createElement('div');
+    const divTask = document.createElement('div');
     const span = document.createElement('span');
     const btnWrap = document.createElement('div');
     const deleteButton = document.createElement('button');
@@ -26,7 +23,7 @@ function init() {
 
     taskList.classList.add('task-list');
     listEl.classList.add('list-element');
-    div1.classList.add('div-task');
+    divTask.classList.add('div-task');
     span.classList.add('task');
     btnWrap.classList.add('btn-wrap');
     deleteButton.classList.add('delete-btn');
@@ -39,38 +36,37 @@ function init() {
     iDown.classList.add('fa-solid');
     iDown.classList.add('fa-circle-arrow-down');
 
-    if(currentTaskNumber <= counter) {
+    //TODO
+    // console.log(input.value.length);
+
+
+    if (input.value.length !== 0) {
         span.textContent = input.value.charAt(0).toUpperCase() + input.value.slice(1);
-        currentTaskNumber = counter;
-    }
 
-    currentTaskNumber++;
-    counter++;
+        deleteButton.appendChild(iDel);
+        upButton.appendChild(iUp);
+        downButton.appendChild(iDown);
+    
+        btnWrap.appendChild(deleteButton);
+        btnWrap.appendChild(upButton);
+        btnWrap.appendChild(downButton);
+    
+        divTask.appendChild(span);
+        divTask.appendChild(btnWrap);
+    
+        listEl.appendChild(divTask);
 
-    deleteButton.appendChild(iDel);
-    upButton.appendChild(iUp);
-    downButton.appendChild(iDown);
-
-    btnWrap.appendChild(deleteButton);
-    btnWrap.appendChild(upButton);
-    btnWrap.appendChild(downButton);
-
-    div1.appendChild(span);
-    div1.appendChild(btnWrap);
-
-    listEl.appendChild(div1);
-
-    if (taskList.length === 0) {
-        taskList.appendChild(listEl);
-    } else {
-        taskList.insertBefore(listEl, taskList.firstElementChild);
+        if (taskList.length === 0) {
+            taskList.appendChild(listEl);
+        } else {
+            taskList.insertBefore(listEl, taskList.firstElementChild);
+        }
     }
 
     //functionality responsible for deleting currently selected task
     deleteButton.addEventListener('click', () => {
         currentTaskNumber = listEl.firstElementChild.textContent[0];
         listEl.remove();
-        counter--;
     })
 
     const parent = listEl.parentNode;
